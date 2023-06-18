@@ -1,6 +1,5 @@
 package com.example.hifztracker;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
-    private List<Student> studentList;
-    private Context context;
 
-    public StudentAdapter(List<Student> studentList, Context context) {
+    private List<Student> studentList;
+
+    public StudentAdapter(List<Student> studentList) {
         this.studentList = studentList;
-        this.context = context;
+    }
+
+    public void updateList(List<Student> updatedList) {
+        studentList = updatedList;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -30,9 +33,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student student = studentList.get(position);
-        holder.textViewName.setText(student.getName());
-        holder.textViewAge.setText(String.valueOf(student.getAge()));
-        holder.textViewClass.setText(student.getStudentClass());
+        holder.txtName.setText(student.getName());
+        holder.txtAge.setText(String.valueOf(student.getAge()));
+        holder.txtClass.setText(student.getStudentClass());
+        // Set other views if needed
     }
 
     @Override
@@ -40,17 +44,16 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         return studentList.size();
     }
 
-    public static class StudentViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewName;
-        TextView textViewAge;
-        TextView textViewClass;
+    static class StudentViewHolder extends RecyclerView.ViewHolder {
+
+        TextView txtName, txtAge, txtClass;
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewName = itemView.findViewById(R.id.textViewName);
-            textViewAge = itemView.findViewById(R.id.textViewAge);
-            textViewClass = itemView.findViewById(R.id.textViewClass);
+            txtName = itemView.findViewById(R.id.textViewClass);
+            txtAge = itemView.findViewById(R.id.textViewAge);
+            txtClass = itemView.findViewById(R.id.textViewClass);
+            // Find other views if needed
         }
     }
 }
-

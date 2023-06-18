@@ -1,6 +1,7 @@
 package com.example.hifztracker;
 
 public class Student {
+    private int id;
     private String name;
     private int age;
     private String studentClass;
@@ -8,13 +9,24 @@ public class Student {
     private String sabaqi;
     private int currentManzil;
 
-    public Student(String name, int age, String studentClass, String sabaq, String sabaqi, int currentManzil) {
+    public Student(int id, String name, int age, String studentClass) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.studentClass = studentClass;
+
+    }
+    public Student(int id, String name, int age, String studentClass, String sabaq, String sabaqi, int currentManzil) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.studentClass = studentClass;
         this.sabaq = sabaq;
         this.sabaqi = sabaqi;
         this.currentManzil = currentManzil;
+    }
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -40,6 +52,4 @@ public class Student {
     public int getCurrentManzil() {
         return currentManzil;
     }
-
-
 }

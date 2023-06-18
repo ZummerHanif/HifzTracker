@@ -23,6 +23,13 @@
         android:textSize="24sp"
 
         />
+    <EditText
+        android:id="@+id/editTextRollNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Roll No"
+        android:textSize="24sp"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/editTextClass"
@@ -31,39 +38,28 @@
         android:hint="Class"
         android:textSize="24sp"/>
 
-    <EditText
-        android:id="@+id/editTextSabaq"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Sabaq"
-        android:textSize="24sp"/>
-
-    <EditText
-        android:id="@+id/editTextSabaqi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Sabaqi"
-        android:textSize="24sp"/>
-
-    <EditText
-        android:id="@+id/editTextManzil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Manzil"
-        android:inputType="number"
-        android:textSize="24sp"/>
-
     <Button
-        android:id="@+id/buttonAddStudent"
+        android:id="@+id/btnAddStudent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Student" />
 
     <Button
-        android:id="@+id/buttonRetrieveStudents"
+        android:id="@+id/btnAddRecord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Retrieve Students" />
+        android:text="Add Record" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Record" />
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Student" />
 
     <TextView
         android:id="@+id/textViewStudentRecords"
@@ -71,6 +67,28 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAppearance="?android:textAppearanceMedium" />
+    <TextView
+        android:id="@+id/textViewClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp" />
+    <TextView
+        android:id="@+id/textViewAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp" />
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewStudents"
