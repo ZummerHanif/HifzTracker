@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextRollNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Roll No"
+        android:textSize="24sp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextSabaq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sabaq"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextSabaqi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sabaqi"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/editTextManzil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Manzil"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnSaveRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Record" />
+
+</LinearLayout>

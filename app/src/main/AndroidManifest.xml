@@ -21,10 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity">
+        <activity android:name=".SearchActivity"
+            android:exported="true">
 
         </activity>
-        <activity android:name=".AddRecordActivity">
+        <activity android:name=".AddRecordActivity"
+            android:exported="true">
 
         </activity>
     </application>

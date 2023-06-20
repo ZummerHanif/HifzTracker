@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
         editTextRollNo = findViewById(R.id.editTextRollNo);
         recyclerViewStudents = findViewById(R.id.recyclerViewStudents);
 
+
         // Initialize database helper
         databaseHelper = new DatabaseHelper(this);
+
 
         // Set click listeners
         btnAddStudent.setOnClickListener(new View.OnClickListener() {
@@ -95,11 +97,17 @@ public class MainActivity extends AppCompatActivity {
 
         if (studentId != -1) {
             Toast.makeText(MainActivity.this, "Student added successfully", Toast.LENGTH_SHORT).show();
-           // clearFields();
-            //loadStudents();
+            clearFields();
+            loadStudents();
         } else {
             Toast.makeText(MainActivity.this, "Failed to add student", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void clearFields() {
+    }
+
+    private void loadStudents() {
     }
 
     @Override

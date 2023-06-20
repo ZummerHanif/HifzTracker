@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-
     private static final String DATABASE_NAME = "student_records.db";
     private static final int DATABASE_VERSION = 1;
 
@@ -96,7 +95,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return studentList;
     }
 
-    // Add methods for updating and retrieving specific records if needed
+    public boolean isStudentExists(int rollNo) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_STUDENTS + " WHERE " + COLUMN_ID + " = " + rollNo;
+        Cursor cursor = db.rawQuery(query, null);
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
 
+    public int addRecord(int rollNo, String sabaq, String sabaqi, int manzil) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_SABAQ, sabaq);
+        values.put(COLUMN_SABAQI, sabaqi);
+        values.put(COLUMN_CURRENT_MANZIL, manzil);
+        return db.update(TABLE_STUDENTS, values, COLUMN_ID + " = ?", new String[]{String.valueOf(rollNo)});
+    }
+
+    public Student getStudent(int rollNo) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_STUDENTS + " WHERE " + COLUMN_ID + " = " + rollNo;
+        Cursor cursor = db.rawQuery(query, null);
+        Student student = null;
+        if (cursor.moveToFirst()) {
+            int idIndex = cursor.getColumnIndexOrThrow(COLUMN_ID);
+            int nameIndex = cursor.getColumnIndexOrThrow(COLUMN_NAME);
+            int ageIndex = cursor.getColumnIndexOrThrow(COLUMN_AGE);
+            int classIndex = cursor.getColumnIndexOrThrow(COLUMN_CLASS);
+            int sabaqIndex = cursor.getColumnIndexOrThrow(COLUMN_SABAQ);
+            int sabaqiIndex = cursor.getColumnIndexOrThrow(COLUMN_SABAQI);
+            int currentManzilIndex = cursor.getColumnIndexOrThrow(COLUMN_CURRENT_MANZIL);
+
+            int id = cursor.getInt(idIndex);
+            String name = cursor.getString(nameIndex);
+            int age = cursor.getInt(ageIndex);
+            String studentClass = cursor.getString(classIndex);
+            String sabaq = cursor.getString(sabaqIndex);
+            String sabaqi = cursor.getString(sabaqiIndex);
+            int currentManzil = cursor.getInt(currentManzilIndex);
+
+            student = new Student(id, name, age, studentClass, sabaq, sabaqi, currentManzil);
+        }
+        cursor.close();
+        db.close();
+        return student;
+    }
 }
-
