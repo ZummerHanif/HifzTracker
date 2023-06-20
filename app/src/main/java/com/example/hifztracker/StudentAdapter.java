@@ -33,9 +33,14 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student student = studentList.get(position);
-        holder.txtName.setText(student.getName());
-        holder.txtAge.setText(String.valueOf(student.getAge()));
-        holder.txtClass.setText(student.getStudentClass());
+        holder.txtName.setText("Name: " + student.getName());
+        holder.txtRollno.setText("RollNo: " + student.getRollNo());
+        holder.txtAge.setText("Age: " + String.valueOf(student.getAge()));
+        holder.txtClass.setText("Class: " + student.getStudentClass());
+        holder.txtSabaq.setText("Sabaq: " + student.getSabaq());
+        holder.txtSabaqi.setText("Sabaqi: " + student.getSabaqi());
+        holder.txtManzil.setText("Manzil: " + student.getCurrentManzil());
+
         // Set other views if needed
     }
 
@@ -46,13 +51,19 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     static class StudentViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtName, txtAge, txtClass;
+        TextView txtName, txtAge, txtClass,txtSabaq,txtSabaqi,txtManzil,txtRollno;
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtName = itemView.findViewById(R.id.textViewClass);
+            txtName = itemView.findViewById(R.id.textViewName);
+            txtRollno = itemView.findViewById(R.id.textViewRollNo);
             txtAge = itemView.findViewById(R.id.textViewAge);
             txtClass = itemView.findViewById(R.id.textViewClass);
+            txtSabaq = itemView.findViewById(R.id.textViewSabaq);
+            txtSabaqi = itemView.findViewById(R.id.textViewSabaqi);
+            txtManzil = itemView.findViewById(R.id.textViewManzil);
+
+
             // Find other views if needed
         }
     }

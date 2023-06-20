@@ -1,7 +1,7 @@
 package com.example.hifztracker;
 
 public class Student {
-    private int id;
+    private int Rollno;
     private String name;
     private int age;
     private String studentClass;
@@ -9,15 +9,15 @@ public class Student {
     private String sabaqi;
     private int currentManzil;
 
-    public Student(int id, String name, int age, String studentClass) {
-        this.id = id;
+    public Student(int RollNo, String name, int age, String studentClass) {
+        this.Rollno= RollNo;
         this.name = name;
         this.age = age;
         this.studentClass = studentClass;
 
     }
-    public Student(int id, String name, int age, String studentClass, String sabaq, String sabaqi, int currentManzil) {
-        this.id = id;
+    public Student(int Rollno, String name, int age, String studentClass, String sabaq, String sabaqi, int currentManzil) {
+        this.Rollno = Rollno;
         this.name = name;
         this.age = age;
         this.studentClass = studentClass;
@@ -25,8 +25,8 @@ public class Student {
         this.sabaqi = sabaqi;
         this.currentManzil = currentManzil;
     }
-    public int getId() {
-        return id;
+    public int getRollNo() {
+        return Rollno;
     }
 
     public String getName() {

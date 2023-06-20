@@ -48,13 +48,9 @@
         android:id="@+id/btnAddRecord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Record" />
+        android:text="Add or Update Record" />
 
-    <Button
-        android:id="@+id/btnUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Record" />
+
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"

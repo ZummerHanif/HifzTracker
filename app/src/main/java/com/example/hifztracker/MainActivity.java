@@ -105,9 +105,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clearFields() {
+        editTextName.setText("");
+        editTextAge.setText("");
+        editTextClass.setText("");
+        editTextRollNo.setText("");
     }
 
     private void loadStudents() {
+        studentList.clear();
+        studentList.addAll(databaseHelper.getAllStudents());
+        studentAdapter.notifyDataSetChanged();
     }
 
     @Override
