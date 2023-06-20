@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Student> studentList;
     private DatabaseHelper databaseHelper;
 
+    private Button buttonShowRecyclerView;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,18 @@ public class MainActivity extends AppCompatActivity {
         editTextClass = findViewById(R.id.editTextClass);
         editTextRollNo = findViewById(R.id.editTextRollNo);
         recyclerViewStudents = findViewById(R.id.recyclerViewStudents);
+        buttonShowRecyclerView = findViewById(R.id.buttonShowRecyclerView);
 
+        buttonShowRecyclerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (recyclerViewStudents.getVisibility() == View.VISIBLE) {
+                    recyclerViewStudents.setVisibility(View.GONE);
+                } else {
+                    recyclerViewStudents.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         // Initialize database helper
         databaseHelper = new DatabaseHelper(this);

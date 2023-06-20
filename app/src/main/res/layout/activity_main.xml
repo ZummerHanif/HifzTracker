@@ -56,6 +56,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search Student" />
+    <Button
+        android:id="@+id/buttonShowRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View All Students" />
+
 
     <TextView
         android:id="@+id/textViewStudentRecords"
@@ -75,15 +81,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:textColor="@android:color/black"
         android:layout_marginTop="8dp" />
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:textColor="@android:color/black"
         android:layout_marginTop="8dp" />
+
+
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -91,6 +97,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout="@layout/item_student" />
+        android:layout="@layout/item_student"
+        android:visibility="gone"/>
 
 </LinearLayout>
