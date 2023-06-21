@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+  >
 
     <EditText
         android:id="@+id/editTextName"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Roll No"
-        android:inputType="number"
+        android:inputType="numberSigned"
         android:textSize="24sp" />
 
     <EditText
@@ -41,57 +41,63 @@
 
     <Button
         android:id="@+id/btnAddStudent"
-        android:layout_width="match_parent"
+        android:layout_width="237dp"
         android:layout_height="wrap_content"
-        android:text="Add Student" />
+        android:text="Add Student"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/btnAddRecord"
-        android:layout_width="match_parent"
+        android:layout_width="239dp"
         android:layout_height="wrap_content"
-        android:text="Add or Update Record" />
+        android:text="Add or Update Record"
+        android:layout_gravity="center"/>
 
 
     <Button
         android:id="@+id/btnSearch"
-        android:layout_width="match_parent"
+        android:layout_width="244dp"
         android:layout_height="wrap_content"
-        android:text="Search Student" />
+        android:text="Search Student"
+        android:layout_gravity="center"/>
+
     <Button
         android:id="@+id/buttonShowRecyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="248dp"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:text="View All Students"
-        android:minHeight="48dp"/>
+        android:layout_gravity="center"/>
 
 
     <TextView
         android:id="@+id/textViewStudentRecords"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="37dp"
+        android:layout_marginLeft="50dp"
         android:textAppearance="?android:textAppearanceMedium" />
+
     <TextView
         android:id="@+id/textViewClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:layout_width="1107dp"
+        android:layout_height="9dp"
         android:textColor="@android:color/black"
-        android:layout_marginTop="8dp" />
+        android:textSize="18sp"
+        android:layout_marginLeft="50dp"/>
     <TextView
         android:id="@+id/textViewAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginLeft="50dp"
+         />
+
     <TextView
         android:id="@+id/textViewName"
-        android:layout_width="wrap_content"
+        android:layout_width="691dp"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_marginTop="8dp" />
-
-
+        android:layout_marginLeft="50dp"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -100,6 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout="@layout/item_student"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:layout_marginLeft="50dp"/>
 
 </LinearLayout>
