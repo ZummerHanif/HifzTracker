@@ -46,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewStudents = findViewById(R.id.recyclerViewStudents);
         buttonShowRecyclerView = findViewById(R.id.buttonShowRecyclerView);
 
+
+        recyclerViewStudents = findViewById(R.id.recyclerViewStudents);
+        recyclerViewStudents.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewStudents.setAdapter(studentAdapter);
+
         buttonShowRecyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

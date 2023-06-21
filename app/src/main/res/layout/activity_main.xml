@@ -23,13 +23,14 @@
         android:textSize="24sp"
 
         />
+
     <EditText
         android:id="@+id/editTextRollNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Roll No"
-        android:textSize="24sp"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/editTextClass"
@@ -60,7 +61,8 @@
         android:id="@+id/buttonShowRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View All Students" />
+        android:text="View All Students"
+        android:minHeight="48dp"/>
 
 
     <TextView
